@@ -8,7 +8,7 @@ else:
 def animals(question, animal):
     animalIn=input(question + ': ')
     if animal==animalIn:
-        print('brawo')
+        print('BRAWO')
     else:
         print(animal)
 animals("Robi miau", "kot")
@@ -16,3 +16,4 @@ animals('Szczeka','pies')
 animals('Pływa', 'ryba')
 animals('MUUUUUUU', 'krowa')
 animals('Ma rogi i brodę', 'koza')
+print('Dziękuje super zabawa!')
