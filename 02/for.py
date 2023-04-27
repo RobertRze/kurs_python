@@ -13,7 +13,7 @@ else:
 
 
 
-'''
+
 #2
 items = ["woda", "herbata", "cytryna", "miód"]
 print("Zagotuj wodę")
@@ -47,4 +47,3 @@ for step in range(3):
 txt='aasjdhlafh'
 for letter in txt:
     print("-", letter)
-    '''
