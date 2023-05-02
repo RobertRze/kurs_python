@@ -14,8 +14,7 @@ for x in my_tuple:
     count = my_tuple.count(x)
     if count > 1:
         arr.append(x)
-arr = list(dict.fromkeys(arr))
-print(arr)
+print(set(arr))
 
 #3 Stwórz krotkę liczb całkowitych. Poproś użytkownika o podanie dowolnej liczby. Jeśli liczba znajduje się na krotce wyswietl jej indeks.
 print("ZADANIE 3")
