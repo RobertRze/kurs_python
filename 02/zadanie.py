@@ -63,8 +63,8 @@ print("Way one: ", res_txt)
 
 print("Way two: ", txt[1::2])
 
-1
-name = input('podaj imioną: ')1234567
+#1
+name = input('podaj imioną: ')
 
 name_list = name.split(',')
 for step in name_list:
