@@ -5,6 +5,7 @@ arr = [ 3, 5, 7, 2, 4, 2, 6, 2]
 arr.append(4)
 arr.extend([1, 2, 3])
 arr.insert(1, 100)
+print(arr)
 arr.remove(7)
 print(arr.index(100))
 print(arr.count(2))
