@@ -38,7 +38,7 @@ def show_word(mask_word):
 def fill_word():
     word_list = ['krowa', 'kot', 'pies', 'kaczka']
     word = word_list[random.randint(0, len(word_list) - 1)]
-    print(word)
+    #print(word)
     word_size = len(word)
     mask_word = len(word) * '-'
     print(mask_word)
