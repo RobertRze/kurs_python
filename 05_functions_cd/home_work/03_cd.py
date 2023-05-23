@@ -17,7 +17,7 @@ def get_level_winers(choice_level):
         'p': 'k'
     }
 
-    if choice_level == 'P':
+    if choice_level == 'p':
         return WINERS_P
     else:
         return WINERS_T
@@ -25,7 +25,7 @@ def get_level_winers(choice_level):
 def get_level_correct(choice_level):
     CORRECT_VALUES_T = ['k', 'n', 'p', 'j', 's']
     CORRECT_VALUES_P = ['k', 'n', 'p']
-    if choice_level == 'P':
+    if choice_level == 'p':
         return CORRECT_VALUES_P
     else:
         return CORRECT_VALUES_T
@@ -35,7 +35,7 @@ def get_comp_choice(CORRECT_VALUES):
 
 def get_user_choice(CORRECT_VALUES):
     while True:
-        user_choice = input(f"Podaj wartości {CORRECT_VALUES}:")
+        user_choice = input(f"Podaj wartości {CORRECT_VALUES}:").lower()
         if user_choice in CORRECT_VALUES:
             return user_choice
         else:
@@ -50,34 +50,38 @@ def show_result(comp, user, WINERS):
         print('Wygrywa komputer')
 
 def start(CORRECT_VALUES, WINERS):
-    while True:
+    play_again = 't'
+    while play_again == 't':
         comp = get_comp_choice(CORRECT_VALUES)
         user = get_user_choice(CORRECT_VALUES)
         print(f"Comp: {comp}, user {user}")
         show_result(comp, user, WINERS)
-        play_again = input("Jeszcze raz t/n: ")
-        if play_again.lower() == 'n':
-            break
+        play_again = input("Jeszcze raz t/n: ").lower()
     print("dzięki")
 
 def level():
-    choice_level = input("""Podaj poziom:
-        P - Prosty
-        T - Trudny - """)
-    start(get_level_correct(choice_level), get_level_winers(choice_level))
-
+    play_again = 't'
+    while play_again == 't':
+        choice_level = input("""Podaj poziom:
+            P - Prosty
+            T - Trudny - """).lower()
+        if choice_level == 'p' or choice_level == 't':
+            start(get_level_correct(choice_level), get_level_winers(choice_level))
+            play_again = start(get_level_correct(choice_level), get_level_winers(choice_level))
+        else:
+            print("Niepoprawny wybór poziomu. Dostępne opcje: P - prosty, T - Trudny")
 
 
 def main():
     choice = input("""Welcome: 
         S - Start, 
         P - Poziom 
-        W - Wyjście - """)
-    if choice == 'S':
-        start(get_level_correct('P'), get_level_winers('P'))
-    elif choice == 'W':
+        W - Wyjście - """).lower()
+    if choice == 's':
+        start(get_level_correct('p'), get_level_winers('p'))
+    elif choice == 'w':
         print("PA!")
-    elif choice == 'P':
+    elif choice == 'p':
         level()
     else:
         print("Wybór z poza zakresu")
