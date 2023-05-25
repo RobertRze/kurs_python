@@ -1,3 +1,10 @@
+import os
+
+def delete_file(file):
+    if os.path.isfile(f'{file}.txt'):
+        os.remove(f'{file}.txt')
+
+
 def write_to_file(file, card):
     with open(f"{file}.txt", "a", encoding="utf-8") as file:
         file.write(card + '\n')
@@ -20,6 +27,9 @@ def is_american(card_num):
     return (int(card_num[0:2]) == 34 or int(card_num[0:2]) == 37) and len(card_num) == 15
 
 def main():
+    file = ['visa', 'mastercard', 'american']
+    for i in file:
+        delete_file(i)
     cards = get_card()
     # print(card_num)
     for card in cards:
