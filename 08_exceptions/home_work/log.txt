@@ -1,0 +1,6 @@
+
+ <class 'datetime.datetime'>  helo
+ <class 'datetime.datetime'>  could not convert string to float: '1a'
+ 2023-05-31 22:57:01  could not convert string to float: 'a'
+ 2023-05-31 22:58:41  Nieporawne dane. Jeszcze raz could not convert string to float: ''
+ 2023-05-31 22:59:47  Nieporawne dane. ERROR: could not convert string to float: 'a'
