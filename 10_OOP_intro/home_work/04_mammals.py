@@ -10,30 +10,37 @@ class Mammals:
         self.environment = environment
 
     def check_mammal(self):
-        return "Czy {} jest ssakiem?: {}".format(self.name, True if self.mammary_glands and self.warm_blooded and self.hairs else False)
+   #     return "Czy {} jest ssakiem?: {}".format(self.name, True if self.mammary_glands and self.warm_blooded and self.hairs else False)
+        if self.mammary_glands and self.hairs and self.warm_blooded:
+            return True
+        elif self.mammary_glands and self.warm_blooded and self.environment == 'woda':
+            return True
+        else:
+            return False
 
 
-def change_to_bool(x):
-    if x == 'False':
-        return False
-    else:
-        return True
 
-def get_animals():
-    try:
-        with open('animals.csv', 'r', encoding='utf-8') as rfile:
-            animals = csv.reader(rfile, delimiter=',')
-            for animal in animals:
-                x = animal[0]
-                x = Mammals(animal[0], change_to_bool(animal[1]), change_to_bool(animal[2]), change_to_bool(animal[3]), animal[4])
-                print(Mammals.check_mammal(x))
-    except FileNotFoundError as ferr:
-        print("Pliku nie znaleziono:", ferr)
+    def change_to_bool(x):
+        if x == 'False':
+            return False
+        else:
+            return True
+
+    def get_animals_from_file():
+        try:
+            with open('animals.csv', 'r', encoding='utf-8') as rfile:
+                animals = csv.reader(rfile, delimiter=',')
+                for animal in animals:
+                    x = animal[0]
+                    x = Mammals(animal[0], Mammals.change_to_bool(animal[1]), Mammals.change_to_bool(animal[2]), Mammals.change_to_bool(animal[3]), animal[4])
+                    print('Zwierze {} to: {}'.format(x.name, x.check_mammal()))
+        except FileNotFoundError as ferr:
+            print("Pliku nie znaleziono:", ferr)
 
 
 
 def main():
-    get_animals()
+    Mammals.get_animals_from_file()
 
 
 if __name__ == '__main__':
