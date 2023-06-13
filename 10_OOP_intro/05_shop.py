@@ -60,8 +60,9 @@ class Shop:
 def main():
     myshop = Shop()
     myshop.show()
+    myshop.add_product(('sox', 12))
     myshop.show_product('buty')
-    myshop.show_product('lal')
+    myshop.show_product('sox')
     myshop.try_product('buty')
     myshop.try_product('lal')
     myshop.buy_product('boty')
