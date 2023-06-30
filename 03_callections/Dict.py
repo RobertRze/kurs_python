@@ -1,5 +1,5 @@
 translate = [('apple', 'jablko'), ('ball', 'pilka')]
-en_pl = dict(translate )
+en_pl = dict(translate)
 print(en_pl)
 print(en_pl['apple'])
 en_pl['bee'] = 'pszczoła'
